@@ -1,0 +1,41 @@
+{
+  "name": "react-reduxform",
+  "version": "1.0.0",
+  "description": "React form implementation with Redux",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack-dev-server --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asitdas2017/react-reduxform.git"
+  },
+  "author": "Asit D",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asitdas2017/react-reduxform/issues"
+  },
+  "homepage": "https://github.com/asitdas2017/react-reduxform#readme",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-jsx": "^1.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.1",
+    "semantic-ui-react": "^0.77.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
