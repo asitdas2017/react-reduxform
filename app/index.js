@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from './components/Login';
+import { Provider } from 'react-redux';
+import App from './App';
+import store from './reducers/reducer';
+
 
 class HelloWorld extends React.Component {
     render() {
         return ( 
-            <h1>
-            Hello, React!Asit < Login / >
-            </h1>
+            <Provider store={store}>
+                <App/>
+            </Provider>
         )
     }
 };
