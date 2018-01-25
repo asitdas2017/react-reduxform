@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import TextField from 'material-ui/TextField';
 
 const validate = values => {
     const errors = {};
@@ -20,6 +21,20 @@ const validate = values => {
     }
     return errors;
 };
+
+const renderTextField = ({
+        input,
+        label,
+        meta: { touched, error }
+    }) => (
+        <TextField
+        hintText={label}
+        floatingLabelText={label}
+        errorText={touched && error}
+        {...input}
+        />
+  )
+
 
 const renderField = ({
         input,
@@ -44,7 +59,7 @@ let LoginForm = ({handleSubmit, pristine, submitting}) => {
     return (
         <form onSubmit={handleSubmit}>        
             <div className="form-group">
-                <Field name="firstName" component={renderField} label="First Name"/>
+                <Field name="firstName" component={renderTextField} label="First Name"/>
             </div>
             <div className="form-group">
                 <Field name="lastName" component={renderField} label="Last Name"/>
