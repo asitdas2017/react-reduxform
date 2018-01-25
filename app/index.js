@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './App';
+import LoginRoot from './components/login/LoginRoot';
+
 import store from './reducers/reducer';
 
 
@@ -9,7 +10,7 @@ class HelloWorld extends React.Component {
     render() {
         return ( 
             <Provider store={store}>
-                <App/>
+                <LoginRoot/>
             </Provider>
         )
     }
