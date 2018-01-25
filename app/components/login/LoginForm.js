@@ -77,5 +77,10 @@ export default LoginForm = reduxForm({
     form: 'contact', 
     validate, 
     destroyOnUnmount: false,
-    onSubmit: () => { /* do something here */ }
+    onSubmit: () => {
+        console.log('Successfully submitted...'); 
+        // browserHistory.push('/reg');
+        // this.props.router.push('/dashboard/customer');
+        // dispatch(push('/home'));
+    }
 })(LoginForm);
