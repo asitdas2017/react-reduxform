@@ -2,7 +2,7 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 
 const validate = values => {
-    const errors = {}
+    const errors = {};
     if (!values.firstName) {
         errors.firstName = 'Required';
     } else if (values.firstName.length < 2) {
@@ -14,35 +14,35 @@ const validate = values => {
         errors.email = 'Invalid email address';
     }
     if (!values.lastName) {
-        errors.lastName = 'Required'
+        errors.lastName = 'Required';
     } else if (values.lastName.length < 2) {
-        errors.lastName = 'Minimum be 2 characters or more'
+        errors.lastName = 'Minimum be 2 characters or more';
     }
     return errors;
-}
+};
 
 const renderField = ({
-    input,
-    label,
-    type,
-    meta: {
-        touched,
-        error,
-        warning
-    }
-}) => (
-    <div>
-        <label className="control-label">{label}</label>
+        input,
+        label,
+        type,
+        meta: {
+            touched,
+            error,
+            warning
+        }
+    }) => (
         <div>
-            <input {...input} placeholder={label} type={type} className="form-control"/> {touched && ((error && <span className="text-danger">{error}</span>) || (warning && <span>{warning}</span>))}
+            <label className="control-label">{label}</label>
+            <div>
+                <input {...input} placeholder={label} type={type} className="form-control"/> 
+                {touched && ((error && <span className="text-danger">{error}</span>) || (warning && <span>{warning}</span>))}
+            </div>
         </div>
-    </div>
-)
+    )
 
-let LoginForm = props => {
-    const {handleSubmit, pristine, submitting} = props;
+let LoginForm = ({handleSubmit, pristine, submitting}) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>        
             <div className="form-group">
                 <Field name="firstName" component={renderField} label="First Name"/>
             </div>
@@ -61,5 +61,6 @@ let LoginForm = props => {
 export default LoginForm = reduxForm({
     form: 'contact', 
     validate, 
-    destroyOnUnmount: false
+    destroyOnUnmount: false,
+    onSubmit: () => { /* do something here */ }
 })(LoginForm);
